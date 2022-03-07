@@ -6,21 +6,29 @@ if len (sys.argv) >= 2:
 else:
 	print('invalid argument')
 
-protocol = sys.argv[2]
+#protocol = sys.argv[2]
 
-if protocol == 't':
-	for port in range(1,65535):
-		s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-		socket.setdefaulttimeout(1)
-		output = s.connect_ex((target,port))
-		if output == 0:
-			print("open: {}".format(port))
-		s.close()
-elif protocol == 'u':
-	for port in range(1,65535):
-		s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
-		socket.setdefaulttimeout(1)
-		output = s.connect_ex((target,port))
-		if output == 0:
-			print("open: {}".format(port))
-		s.close()
+for port in range(1,65535):
+	s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+	socket.setdefaulttimeout(1)
+	output = s.connect_ex((target,port))
+	if output == 0:
+		print("open: {}".format(port))
+	s.close()
+
+#if protocol == 't':
+#	for port in range(1,65535):
+#		s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+#		socket.setdefaulttimeout(1)
+#		output = s.connect_ex((target,port))
+#		if output == 0:
+#			print("open: {}".format(port))
+#		s.close()
+#elif protocol == 'u':
+#	for port in range(1,65535):
+#		s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+#		socket.setdefaulttimeout(1)
+#		output = s.connect_ex((target,port))
+#		if output == 0:
+#			print("open: {}".format(port))
+#		s.close()
