@@ -12,17 +12,17 @@ else:
 def server():
   import socket            
   s = socket.socket()        
-  print ("Socket successfully created")
+  print ('Socket started')
   port = 4444               
   s.bind(('', port))        
-  print ("socket binded to %s" %(port))
+  print ('binded to port: %s' %(port))
   s.listen(5)    
-  print ("socket is listening")           
+  print ('Listening...')           
   while True:
-    c, addr = s.accept()    
-    print ('Connection From: ', addr )
-    c.send('THIS IS A TEST'.encode())
-    c.close()
+    client, address = s.accept()    
+    print ('Connection From: ', address )
+    client.send('THIS IS A TEST'.encode())
+    client.close()
     break
   
 def client():
