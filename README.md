@@ -9,9 +9,11 @@
  - [x] TCP port scanning
  - [x] CLI
  - [x] GUI
- - [ ] error handling
+ - [x] Default Port Names
+ - [x] error handling
  - [ ] UDP port scanning
- - [ ] Default Port Names
+ - [ ] PING sweep
+ - [ ] Chat Feature
 
 **GUI:**
 **![](https://lh4.googleusercontent.com/pVm2tgpu6vOW953AHiXok0SF63l4wGXkHiJ-tUcX_boWghkdQLDJfFW0mVCw3KMamcvvNJHWb9uoSw9HXFfA1sg3A4KeXAkF5g-OK-RPBF-TuCKJeR2AQkhNqba3liBseYedCG_d)**
