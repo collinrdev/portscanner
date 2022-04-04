@@ -17,7 +17,7 @@ def server():
   message = input('Type your Message: ')
   s = socket.socket()        
   print ('Socket started')
-  port = 4444               
+  port = int(input("Enter port: "))               
   s.bind(('', port))        
   print ('binded to port: %s' %(port))
   s.listen(5)    
@@ -32,8 +32,9 @@ def server():
 # Client to recieve message
 def client():            
   s = socket.socket()        
-  port = 4444               
-  s.connect(('127.0.0.1', port))
+  port = int(input("Enter port: "))
+  ip = input("Enter IP: ")
+  s.connect((ip, port))
   print (s.recv(1024).decode())
   s.close()
 
