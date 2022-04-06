@@ -2,22 +2,33 @@
 import sys
 import socket
 from tkinter import *
+from tkinter import ttk
 
 #create root window
 root = Tk()
 #Create title
 root.title("Port Scanner")
 
+#Create Tab Control
+tabControl = ttk.Notebook(root)
+#Create Tabs
+tab1 = ttk.Frame(tabControl)
+tab2 = ttk.Frame(tabControl)
+#Pack Tabs
+tabControl.add(tab1, text ='Tab 1')
+tabControl.add(tab2, text ='Tab 2')
+tabControl.pack(expand=1, fill="both")
+
 #Create labels and set atrributes
-label1 = Label(root, text = "Enter IP: ")
+label1 = ttk.Label(tab1, text = "Enter IP: ")
 label1.grid()
-label3 = Label(root, text = "Open Ports:")
+label3 = ttk.Label(tab1, text = "Open Ports:")
 label3.grid()
-label2 = Label(root, text = "", fg="green")
+label2 = ttk.Label(tab1, text = "")
 label2.grid()
 
 #entry field
-ip = Entry(root, width=10)
+ip = ttk.Entry(tab1, width=10)
 ip.grid(column =1, row =0)
 #Portscanner function
 def scanner():
@@ -33,7 +44,7 @@ def scanner():
         label2.configure(text = portlist)
 
 #button to start scan
-btn = Button(root, text = "Scan", fg = "red", command=scanner)
+btn = ttk.Button(tab1, text = "Scan", command=scanner)
 btn.grid(column=2, row=0)
 #run the program
 root.mainloop()
