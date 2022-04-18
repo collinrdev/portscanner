@@ -16,9 +16,9 @@ tab1 = ttk.Frame(tabControl)
 tab2 = ttk.Frame(tabControl)
 tab3 = ttk.Frame(tabControl)
 #Pack Tabs
-tabControl.add(tab1, text ='Tab 1')
-tabControl.add(tab2, text ='Tab 2')
-tabControl.add(tab3, text ='Tab 3')
+tabControl.add(tab1, text ='Scanner')
+tabControl.add(tab2, text ='Server')
+tabControl.add(tab3, text ='Client')
 tabControl.pack(expand=1, fill="both")
 
 #Create labels and set atrributes
